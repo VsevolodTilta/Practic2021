@@ -6,26 +6,25 @@ void InsertSort(int* mas, int n)
 {
     try {
         cout << "\n\nСортировка вставками" << endl;
-        for (int i = 0; i < n; i++)
-        {
-            for (int i = 1; i < n; i++) {
-                for (int j = i; j > 0 && mas[j - 1] > mas[j]; j--) {
-                    int tmp = mas[j - 1];
-                    mas[j - 1] = mas[j];
-                    mas[j] = tmp;
-                    cout << endl << "Сортировка:\t";
-                    for (int i = 0; i < n; i++)
-                        cout << mas[i] << "\t";
-                }
+
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j > 0 && mas[j - 1] > mas[j]; j--) {
+                int tmp = mas[j - 1];
+                mas[j - 1] = mas[j];
+                mas[j] = tmp;
+                cout << endl << "Сортировка:\t";
+                for (int i = 0; i < n; i++)
+                    cout << mas[i] << "\t";
             }
         }
+
         cout << endl << "Результирующий массив: ";
         for (int i = 0; i < n; i++)
             cout << mas[i] << "\t";
     }
-    catch(...)
+    catch (...)
     {
-        cout << "Гоша наелся говна" << endl;
+        cout << "Ошибка сортировки вставками" << endl;
     }
 }
 
@@ -52,7 +51,7 @@ void BubbleSort(int* mas, int n)
     }
     catch (...)
     {
-        cout << "Гоша наелся дважды" << endl;
+        cout << "Ошибка сортировки пузырьком" << endl;
     }
 }
 
@@ -65,6 +64,7 @@ int main()
         cout << "Количество элементов в массиве: " << "";
         cin >> n;
         int* masInsert = new int[n];
+
         for (int i = 0; i < n; i++)
         {
             cout << i + 1 << "-й " << "элемент: ";
@@ -86,8 +86,9 @@ int main()
     }
     catch (...)
     {
-        cout << "Гоша наелся говна впервые" << endl;
+        cout << "Некорректный ввод" << endl;
     }
+
     system("pause");
     return 0;
 }
